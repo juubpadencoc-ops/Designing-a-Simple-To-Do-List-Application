@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Cugman System</title>
+</head>
+<body>
+
+<!-- NAVIGATION BAR (Admin is NOT here) -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#resident">Resident Portal</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contacts</a></li>
+    </ul>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+    <h1>Welcome to Barangay Cugman Request System</h1>
+    <br>
+    <p>Say goodbye to long queues and hello to fast, accessible public service! Barangay Cugman is proud to offer a digital space where residents can easily request their necessary clearances, certifications, and permits from the comfort of their homes. Simply scroll down to access the Resident Portal, log in, and let us take care of your document needs today.</p>
+</section>
+
+<!-- RESIDENT PORTAL -->
+<section id="resident">
+    <h1>Resident Portal</h1>
+    <form>
+        <input type="text" placeholder="Username"><br>
+        <input type="password" placeholder="Password"><br>
+        <button type="submit">Login</button>
+        <button type="button">Register</button>
+    </form>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+    <h1>About Us</h1>
+    <br>
+    <b>Barangay Cugman Management System helps residents request documents.</b>
+    <p>The Barangay Cugman Online Request System is a digital platform designed to streamline and simplify how residents acquire essential local documents. Through this secure online portal, you can conveniently submit requests for a Barangay Clearance, Certificate of Indigency, Barangay Permit, and Certificate of Residency without the need to endure long queues at the physical office. By transitioning to an automated request form, Barangay Cugman aims to provide a faster, more transparent, and easily accessible public service experience, ensuring that your important documentation needs are met efficiently right from the comfort of your home.</p>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <p>Email: Group1@phinmaed.com</p>
+    <p>Contact: 091234567891</p>
+</footer>
+
+<!-- ADMIN LOGIN (Hidden from normal view, placed at the bottom) -->
+<section id="admin">
+    <h1>Admin Login</h1>
+    <form>
+        <input type="text" placeholder="Username"><br>
+        <input type="password" placeholder="Password"><br>
+        <button type="submit">Login</button>
+    </form>
+</section>
+
+<style>
+    /* RESET */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    /* NAVBAR */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: #2c3e50;
+        padding: 15px 0;
+        z-index: 1000;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding-right: 30px;
+    }
+
+    nav ul li {
+        margin: 0 20px;
+    }
+
+    nav ul li a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    nav ul li a:hover {
+        color: #000000;
+    }
+
+    /* GENERAL SECTIONS */
+    section {
+        height: 100vh;
+        padding-top: 80px;
+        text-align: center;
+    }
+
+    /* HOME */
+    #home {
+        background: #ecf0f1;
+        background-image: url(test.jpeg);
+        background-size: cover;
+        background-position: center center;
+        background-attachment: fixed;   
+    }
+
+    #home h1 {
+        color: azure;
+        margin-top: 100px;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    #home p {
+        color: azure;
+        font-size: 18px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 800px;
+        margin: 20px auto;
+        line-height: 1.6;
+        font-size: 18px;
+
+    }
+
+    /* RESIDENT */
+    #resident {
+        background: #b2bec3;
+    }
+
+    /* ABOUT */
+    #about {
+        background: #95a5a6;
+    }
+
+    #about p {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 800px;
+        margin: 20px auto;
+        line-height: 1.6;
+        font-size: 18px;
+    }
+
+    /* FORMS */
+    form {
+        margin-top: 20px;
+    }
+
+    input {
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+        border-radius: 16px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background: #2c3e50;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #1a252f; 
+    }
+
+    /* FOOTER */
+    #contact {
+        background: #2c3e50;
+        color: #ffffff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    #contact p {
+        margin: 5px 0;
+    }
+
+    /* ---------------------------------------------------------
+       MAGIC TRICK FOR HIDING/SHOWING ADMIN
+       --------------------------------------------------------- */
+
+    /* 1. HIDE IT COMPLETELY BY DEFAULT */
+    #admin {
+        display: none; 
+    }
+
+    /* 2. SHOW IT ONLY WHEN THE URL HAS #ADMIN */
+    #admin:target {
+        display: flex;              /* Turn flexbox back on */
+        flex-direction: column;      
+        justify-content: center;     
+        align-items: center;         
+        background-color: #1a252f;
+        height: 100vh; 
+        padding-top: 0;             /* Removes the 80px padding so it's perfectly centered */
+        position: fixed;            /* Fixes it to the screen so it covers everything else */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;               /* Puts it below the navbar so you can still click Home to leave */
+    }
+
+    #admin h1 {
+        color: azure;
+        margin-bottom: 20px;
+    }
+
+</style>
+</body>
+</html>
